@@ -1,7 +1,7 @@
 
 export default function Tags () {
   return (
-    <div>
+    <div className="w-[350px]">
       <h3 className="text-xl pb-3">Tags</h3>
       <ul className="flex gap-2 flex-wrap">
         <li className="bg-gray-200 hover:bg-gray-300 rounded">
