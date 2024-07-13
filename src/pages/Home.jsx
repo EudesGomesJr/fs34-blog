@@ -1,10 +1,10 @@
-import Header from './components/Header';
-import FormBase from './components/FormBase';
-import PostHeader from './components/PostHeader';
-import PostBody from './components/PostBody';
-import Tags from './components/Tags';
-import Latest from './components/Latest';
-import Layout from './components/Layout';
+import Header from './../components/Header';
+import FormBase from './../components/FormBase';
+import PostHeader from './../components/PostHeader';
+import PostBody from './../components/PostBody';
+import Tags from './../components/Tags';
+import Latest from './../components/Latest';
+import Layout from './../components/Layout';
 
 function App() {
     return (
