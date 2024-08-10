@@ -8,7 +8,7 @@ const tags = [
         name: "CSS"
     },
     {
-        id: 2,
+        id: 3,
         name: "HTML"
     }
   ];

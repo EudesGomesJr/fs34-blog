@@ -26,7 +26,7 @@ export default function PostPage() {
 
   // Pega todas as tags em tags.js que foram relacionadas no campo tag_id do post
   let tags = apiTag.filter(tag => {
-    return post.tag_id.includes(tag.id)
+    return post?.tag_id?.includes(tag.id)
   })
 
   // Apresenta as tags encontradas acima. 

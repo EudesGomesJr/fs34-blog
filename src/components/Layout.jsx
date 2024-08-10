@@ -26,7 +26,7 @@ export default function Layout ({children, showSideBar}) {
               <input type="text" 
               onChange={(event) => setQuery(event.target.value)}
               value={query} 
-              className="border px-2 py-1 rounded" 
+              className="border px-2 py-1 rounded  dark:text-black" 
               name="query" />
               <button className="border rounded border-black px-2 py-1 ml-2 
               dark:border-white">Pesquisar</button>

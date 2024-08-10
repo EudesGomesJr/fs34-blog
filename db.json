@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "90a0",
+      "title": "testando a entrada do slug",
+      "content": "sd foasdfo",
+      "slug": "testando-a-entrada-do-slug"
+    },
+    {
+      "id": "2dd3",
+      "title": "Aprendendo CSS",
+      "slug": "aprendendo-css",
+      "content": "djf alsdfkj"
+    }
+  ]
+}
