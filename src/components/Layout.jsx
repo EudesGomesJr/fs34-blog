@@ -33,7 +33,7 @@ export default function Layout ({children, showSideBar}) {
           </FormBase>
 
           <button onClick={toggleTheme} className="border rounded border-black px-2 py-1 ml-auto 
-          dark:border-white">{theme==='dark' ? <FaSun />:<FaRegMoon /> } </button>
+          dark:border-white">{theme==='dark' ? <FaSun id="fa-sun"/>:<FaRegMoon id="fa-moon"/> } </button>
       </Header>
 
       <div className={'flex px-20 py-10 gap-20 dark:bg-slate-950 dark:text-white'}>

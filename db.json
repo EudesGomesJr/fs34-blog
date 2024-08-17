@@ -1,16 +1,35 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": "90a0",
-      "title": "testando a entrada do slug",
-      "content": "sd foasdfo",
-      "slug": "testando-a-entrada-do-slug"
+      "id": "4ffd",
+      "name": "Eudes",
+      "email": "eudes_jr@hotmail.com",
+      "password": "123456"
     },
     {
-      "id": "2dd3",
-      "title": "Aprendendo CSS",
-      "slug": "aprendendo-css",
-      "content": "djf alsdfkj"
+      "id": "10da",
+      "name": "saldfals",
+      "email": "asdkjfl@temp.com",
+      "password": "sdfas"
+    },
+    {
+      "id": "f8e6",
+      "name": "mario",
+      "email": "sdfas",
+      "password": "12312"
+    },
+    {
+      "id": "eaa5",
+      "name": "pedro",
+      "email": "lakjdsl",
+      "password": "kasdjfl"
+    },
+    {
+      "id": "9a38",
+      "name": "André",
+      "email": "asdfa",
+      "password": "asdfa"
     }
-  ]
+  ],
+  "posts": []
 }
