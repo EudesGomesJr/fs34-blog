@@ -1,12 +1,23 @@
 import TagItem from "./TagItem";
 import { usePost } from "../context/PostContext";
-import tags from "../api/tags";
+import { useEffect, useState } from "react";
+//import tags from "../api/tags";
 
 export default function Tags () {
+
+  let [tagslist, setTagsList] = useState([]);
+
+    useEffect(()=> {
+      fetch('http://localhost:3000/tags')
+      .then(response => response.json())
+      .then(tags=> {
+        setTagsList(tags);  
+    });
+  },[]);
   
   // let {tags} = usePost();
   let postData = usePost() ?? false;
-  let tagslist = tags;
+  //let tagslist = tags;
 
   if(postData) {
     tagslist = postData.tags
