@@ -1,20 +1,19 @@
-
+import Layout from "../components/Layout";
+import Post from "../components/Post";
 import { useParams } from "react-router-dom";
-import Layout from '../components/Layout';
-import posts from '../api/posts.js';
-import users from '../api/users.js';
+import posts from "../api/posts";
+import users from "../api/users";
 
 export default function AuthorPage() {
-  
   let params = useParams();
 
-  let user = users.find(function(arg) {
-    return arg.username === params.username;
-  })
+  let user = users.find(function (user) {
+    return user.username === params.username;
+  });
 
   return (
     <Layout>
-        <h1>{user.username}</h1>
+      <h1>Author: {user.name}</h1>
     </Layout>
   );
 }
