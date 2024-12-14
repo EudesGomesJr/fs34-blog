@@ -8,47 +8,59 @@ import apiUsers from "../api/users";
 import apiTags from "../api/tags";
 
 import { usePost } from "../context/PostContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function PostPage() {
+
+  const [post, setPost] = useState({}); // Da primeira vez, post é {}
+  let user = {};
+
   let { setTags } = usePost();
 
   let params = useParams();
 
-  let post = apiPost.find((post) => {
-    return post.slug === params.postSlug;
-  });
+  if(!post.id) {    // A partir da segunda iteração, o conteúdo de post não é mais {}
+    fetch("http://localhost:3000/posts/" + params.postSlug)
+      .then((response) => response.json())
+      .then(posts => setPost(posts));
+  }
 
-  let userId = post.user_id;
-  let user = apiUsers.find((user) => user.id === userId);
 
-  let tags = apiTags.filter((tag) => {
-    return post?.tags_id?.includes(tag.id);
-  });
 
-  useEffect(() => {
-    setTags(tags);
-  }, []);
+  // let post = apiPost.find((post) => {
+  //   return post.slug === params.postSlug;
+  // });
+
+  // let userId = post.user_id;
+  // let user = apiUsers.find((user) => user.id === userId);
+
+  // let tags = apiTags.filter((tag) => {
+  //   return post?.tags_id?.includes(tag.id);
+  // });
+
+  // useEffect(() => {
+  //   setTags(tags);
+  // }, []);
 
   return (
     <Layout tags={[{ name: "JAVASCRIPT" }]} showSideBar>
       <h1 className="font-semibold text-3xl mb-4">{post.title}</h1>
       <Post>
-        <PostHeader
-          authorName={user.name}
-          authorProfile={user.profile_path}
-          authorUsername={user.username}
-          postDate={post.date}
-        />
+        {post.author && <PostHeader
+            authorName={post.author.fullname}
+            authorProfile={post.author.profile_path}
+            authorUsername={post.author.username}
+            postDate={post.createdAt}
+        />}
+        
         <div className="h-[250px] my-4">
           <img
-            src={post.image_path}
+            src={post.image}
             className="rounded w-full h-full object-cover object-center"
           />
         </div>
 
         <p>{post.content}</p>
-        <Tags />
       </Post>
     </Layout>
   );
